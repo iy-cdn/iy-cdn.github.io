@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+<meta content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no' name='viewport'/>  
+<meta expr:content='&quot;text/html; charset=&quot; + data:blog.encoding' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+
+<meta content='global' name='target'/>
+<meta content='global' name='distribution'/>
+<meta expr:content='data:view.isSingleItem ? &quot;article&quot; : &quot;website&quot;' property='og:type'/>
+<meta content='summary_large_image' name='twitter:card'/>
+
+<meta expr:content='data:blog.locale.language' http-equiv='Content-Language'/>
+<meta expr:content='data:blog.locale.language' name='language'/>
+<meta expr:content='data:blog.locale.language' property='og:locale'/>
+
+<meta content='notranslate' name='google'/>
+<meta content='unsafe-url' name='referrer'/>
+<meta content='telephone=no' name='format-detection'/>
+
+
+<data:blog.feedLinks/>
+
+
+<b:comment>[URL]______________________________________________________________________________________________________</b:comment>
+<meta expr:content='data:view.url.canonical' property='og:url'/>
+<link expr:href='data:view.url.canonical' rel='canonical'/>
+<link expr:href='data:view.url.canonical appendParams {m: &quot;0&quot;}' rel='alternate'/>
+<link expr:href='data:view.url.canonical appendParams {m: &quot;1&quot;}' rel='alternate'/>
+<link expr:href='data:view.url.canonical appendParams {hl: &quot;en&quot;}' rel='alternate'/>
+
+<meta expr:content='data:view.url.canonical' name='twitter:url'/>
+<b:comment>[/URL]______________________________________________________________________________________________________</b:comment>
+
+<b:comment>[Title]______________________________________________________________________________________________________</b:comment>
+<b:if cond='data:view.isHomepage'><title><data:blog.title/></title></b:if>
+<b:if cond='data:view.isMultipleItems'>
+<b:if cond='data:view.search.query'><title><data:blog.title/> _ <data:messages.search/> | <data:view.search.query/></title></b:if>
+<b:if cond='data:view.search.label'><title><data:blog.title/> | <data:blog.pageName/></title></b:if>
+<b:if cond='data:view.isArchive'><title><data:blog.title/> _ <data:messages.archive/> | <data:blog.pageName/></title></b:if>
+<b:if cond='data:view.search and !data:view.search.label and !data:view.search.query and !data:view.isArchive'><title><data:blog.title/></title></b:if>
+<b:else/><title><data:blog.title/> | <data:blog.pageName/></title>
+</b:if>
+
+<meta expr:content='data:view.isSingleItem ? data:blog.title + &quot; | &quot; + data:blog.pageName : data:view.title' name='title'/>
+<meta expr:content='data:view.isSingleItem ? data:blog.title + &quot; | &quot; + data:blog.pageName : data:view.title' property='og:title'/>
+<meta expr:content='data:view.isSingleItem ? data:blog.title + &quot; | &quot; + data:blog.pageName : data:view.title' name='twitter:title'/>
+
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<b:comment>[/Title]______________________________________________________________________________________________________</b:comment>
+
+  
+<b:comment>[Description]______________________________________________________________________________________________________</b:comment>
+<meta expr:content='data:view.description' name='description'/>
+<meta expr:content='data:view.description' property='og:description'/>
+<meta expr:content='data:view.description' name='twitter:description'/>
+<b:comment>[/Description]______________________________________________________________________________________________________</b:comment>
+
+<b:comment>[images]______________________________________________________________________________________________________</b:comment>
+<b:if cond='data:view.isSingleItem and data:view.featuredImage'>
+	<link expr:href='data:view.featuredImage.isYoutube ? resizeImage(data:view.featuredImage.youtubeMaxResDefaultUrl , 1200 , &quot;16:9&quot;) : resizeImage(data:view.featuredImage , 1200 , &quot;1200:630&quot;)' rel='image_src'/>
+	<meta expr:content='data:view.featuredImage.isYoutube ? resizeImage(data:view.featuredImage.youtubeMaxResDefaultUrl , 1200 , &quot;16:9&quot;) : resizeImage(data:view.featuredImage , 1200 , &quot;1200:630&quot;)' name='thumbnail'/>
+<b:elseif cond='data:view.isSingleItem and !data:view.featuredImage'/>
+	<link expr:href='resizeImage(data:skin.vars.noPostImg , 1200 , &quot;1200:630&quot;)' rel='image_src'/>
+	<meta expr:content='resizeImage(data:skin.vars.noPostImg , 1200 , &quot;1200:630&quot;)' name='thumbnail'/>
+<b:elseif cond='data:view.isMultipleItems and data:view.featuredImage and !data:skin.vars.mainImg'/>
+	<link expr:href='data:view.featuredImage.isYoutube ? resizeImage(data:view.featuredImage.youtubeMaxResDefaultUrl , 1200 , &quot;16:9&quot;) : resizeImage(data:view.featuredImage , 1200 , &quot;1200:630&quot;)' rel='image_src'/>  
+	<meta expr:content='data:view.featuredImage.isYoutube ? resizeImage(data:view.featuredImage.youtubeMaxResDefaultUrl , 1200 , &quot;16:9&quot;) : resizeImage(data:view.featuredImage , 1200 , &quot;1200:630&quot;)' name='thumbnail'/>
+<b:elseif cond='data:view.isMultipleItems and data:skin.vars.mainImg'/>
+	<link expr:href='resizeImage(data:skin.vars.mainImg , 1200 , &quot;1200:630&quot;)' rel='image_src'/>
+	<meta expr:content='resizeImage(data:skin.vars.mainImg , 1200 , &quot;1200:630&quot;)' name='thumbnail'/>
+</b:if>
+
+<b:if cond='data:view.isSingleItem and data:view.featuredImage'>
+	<meta expr:content='data:view.featuredImage.isYoutube ? resizeImage(data:view.featuredImage.youtubeMaxResDefaultUrl , 1200 , &quot;16:9&quot;) : resizeImage(data:view.featuredImage , 1200 , &quot;1200:630&quot;)' property='og:image'/>
+<b:elseif cond='data:view.isSingleItem and !data:view.featuredImage'/>
+  <meta expr:content='resizeImage(data:skin.vars.noPostImg , 1200 , &quot;1200:630&quot;)' property='og:image'/>
+<b:elseif cond='data:view.isMultipleItems and data:view.featuredImage and !data:skin.vars.mainImg'/>
+	<meta expr:content='data:view.featuredImage.isYoutube ? resizeImage(data:view.featuredImage.youtubeMaxResDefaultUrl , 1200 , &quot;16:9&quot;) : resizeImage(data:view.featuredImage , 1200 , &quot;1200:630&quot;)' property='og:image'/>
+<b:elseif cond='data:view.isMultipleItems and data:skin.vars.mainImg'/>
+  <meta expr:content='resizeImage(data:skin.vars.mainImg , 1200 , &quot;1200:630&quot;)' property='og:image'/>
+</b:if>    
+<meta content='1200' property='og:image:width'/>
+<meta content='630' property='og:image:height'/>
+<meta expr:content='data:view.title' property='og:image:alt'/>
+
+
+<b:if cond='data:view.isSingleItem and data:view.featuredImage'>
+	<meta expr:content='data:view.featuredImage.isYoutube ? resizeImage(data:view.featuredImage.youtubeMaxResDefaultUrl , 1200 , &quot;16:9&quot;) : resizeImage(data:view.featuredImage , 1200 , &quot;1200:630&quot;)' name='twitter:image'/>
+<b:elseif cond='data:view.isSingleItem and !data:view.featuredImage'/>
+  <meta expr:content='resizeImage(data:skin.vars.noPostImg , 1200 , &quot;1200:630&quot;)' name='twitter:image'/>
+<b:elseif cond='data:view.isMultipleItems and data:view.featuredImage and !data:skin.vars.mainImg'/>
+	<meta expr:content='data:view.featuredImage.isYoutube ? resizeImage(data:view.featuredImage.youtubeMaxResDefaultUrl , 1200 , &quot;16:9&quot;) : resizeImage(data:view.featuredImage , 1200 , &quot;1200:630&quot;)' name='twitter:image'/>
+<b:elseif cond='data:view.isMultipleItems and data:skin.vars.mainImg'/>
+  <meta expr:content='resizeImage(data:skin.vars.mainImg , 1200 , &quot;1200:630&quot;)' name='twitter:image'/>
+</b:if>
+<meta content='1200' name='twitter:image:width'/>
+<meta content='630' name='twitter:image:height'/>
+<meta expr:content='data:view.title' name='twitter:image:alt'/>
+
+<b:comment>[/images]______________________________________________________________________________________________________</b:comment>
+
+
+
+
+<b:comment>[PWA]______________________________________________________________________________________________________</b:comment>
+<link id='manifest-placeholder' rel='manifest'/>
+<script>//<![CDATA[ 
+document.querySelector('#manifest-placeholder').setAttribute('href', '/dynamic-manifest-url.json');
+//]]>
+const DynamicManifest = {
+&quot;name&quot;: &quot;<data:blog.title.jsonEscaped/>&quot;,
+&quot;short_name&quot;: &quot;<data:blog.title.jsonEscaped/>&quot;,
+&quot;description&quot;: &quot;<data:view.description/>&quot;,
+&quot;start_url&quot;: &quot;<b:eval expr='data:blog.homepageUrl.canonical appendParams {source: &quot;pwa&quot;}'/>&quot;,
+&quot;scope&quot;: &quot;<data:blog.homepageUrl.canonical/>&quot;,
+&quot;dir&quot;: &quot;<data:blog.languageDirection/>&quot;,
+&quot;orientation&quot;: &quot;any&quot;,
+&quot;display&quot;: &quot;standalone&quot;,
+&quot;background_color&quot;: &quot;#fafafa&quot;,
+&quot;theme_color&quot;: &quot;<data:skin.vars.primary/>&quot;,
+&quot;icons&quot;: [
+{ &quot;src&quot;: &quot;<data:blog.blogspotFaviconUrl/>&quot;, &quot;type&quot;: &quot;image/x-icon&quot; },
+{ &quot;src&quot;: &quot;<b:eval expr='resizeImage(data:skin.vars.logo, 192)'/>&quot;, &quot;type&quot;: &quot;image/png&quot;, &quot;sizes&quot;: &quot;192x92&quot;},
+{ &quot;src&quot;: &quot;<b:eval expr='resizeImage(data:skin.vars.logo, 512)'/>&quot;, &quot;type&quot;: &quot;image/png&quot;, &quot;sizes&quot;: &quot;512x512&quot;}
+]
+}
+//<![CDATA[
+const stringManifest = JSON.stringify(DynamicManifest); const blob = new Blob([stringManifest], {type: 'application/json'});
+const manifestURL = URL.createObjectURL(blob); document.querySelector('#manifest-placeholder').setAttribute('href', manifestURL);
+//]]></script>
+
+<meta content='yes' name='mobile-web-app-capable'/>
+<meta content='yes' name='apple-mobile-web-app-capable'/>
+<meta expr:content='data:blog.title' name='application-name'/>
+<meta expr:content='data:blog.title' name='apple-mobile-web-app-title'/>
+<meta expr:content='data:blog.homepageUrl.canonical' name='msapplication-starturl'/>
+<meta content='force' name='imagemode'/>
+<meta content='no' name='full-screen'/>
+<meta content='application' name='browsermode'/>
+<meta expr:content='data:skin.vars.primary' name='theme-color'/>
+<meta expr:content='data:skin.vars.primary' name='apple-mobile-web-app-status-bar-style'/>
+<meta content='#fff' name='msapplication-TileColor'/>
+<meta expr:content='data:skin.vars.primary' name='msapplication-navbutton-color'/>
+<link expr:href='data:blog.blogspotFaviconUrl' rel='shortcut icon' type='image/x-icon'/>
+<b:with value='data:skin.vars.logo' var='img'>
+<link expr:href='resizeImage(data:img,512)' rel='mask-icon' size='any'/>
+<link expr:href='resizeImage(data:img,192)' rel='icon' sizes='192x92' type='image/png'/>
+<link expr:href='resizeImage(data:img,512)' rel='icon' sizes='512x512' type='image/png'/>
+<link expr:href='resizeImage(data:img, 512)' rel='apple-touch-icon'/>
+<link expr:href='resizeImage(data:img, 52)' rel='apple-touch-icon-precomposed' sizes='57x57'/>
+<link expr:href='resizeImage(data:img, 72)' rel='apple-touch-icon' sizes='72x72'/>
+<link expr:href='resizeImage(data:img, 76)' rel='apple-touch-icon' sizes='76x76'/>
+<link expr:href='resizeImage(data:img, 120)' rel='apple-touch-icon' sizes='120x120'/>
+<link expr:href='resizeImage(data:img, 152)' rel='apple-touch-icon' sizes='152x152'/>
+<link expr:href='resizeImage(data:img,512)' rel='apple-touch-icon' sizes='512x512'/>
+<link expr:href='resizeImage(data:img, 480)' rel='apple-touch-startup-image'/>
+<meta expr:content='resizeImage(data:img, 512)' name='msapplication-TileImage'/>
+<meta expr:content='resizeImage(data:img, 70)' name='msapplication-square70x70logo'/>
+<meta expr:content='resizeImage(data:img, 150)' name='msapplication-square150x150logo'/>
+<meta expr:content='resizeImage(data:img, 310)' name='msapplication-square310x310logo'/>
+</b:with>
+<b:comment>[/PWA]______________________________________________________________________________________________________</b:comment>
+
+
+
+
+<b:comment>[Meta schema]______________________________________________________________________________________________________</b:comment>
+<script type='application/ld+json'>
+{ &quot;@context&quot;: &quot;http://schema.org&quot;, &quot;@graph&quot;: [
+  
+{
+  &quot;@type&quot;:   &quot;Organization&quot;,
+  &quot;url&quot;: &quot;<data:blog.homepageUrl.canonical.jsonEscaped/>&quot;,
+  &quot;logo&quot;: &quot; <b:eval expr='data:skin.vars.logo ? data:skin.vars.logo : data:blog.blogspotFaviconUrl'/>&quot;,
+  &quot;name&quot;: &quot;<data:blog.title.jsonEscaped/>&quot;,
+  &quot;founder&quot;: &quot;	&quot;,&quot;foundingDate&quot;: &quot;2021&quot; 
+},  
+    
+{
+  &quot;@type&quot;:   &quot;WebPage&quot;,
+  &quot;url&quot;: &quot;<data:view.url.canonical.jsonEscaped/>&quot;,
+  &quot;@id&quot;: &quot;<data:blog.homepageUrl.canonical.jsonEscaped/>&quot;,
+  &quot;name&quot;: &quot;<data:view.title.jsonEscaped/>&quot;,
+  &quot;description&quot;: &quot;<data:view.description.jsonEscaped/>&quot;, &quot;mainEntityOfPage&quot;: 
+  },
+    
+{
+&quot;@type&quot;: &quot;WebSite&quot;,
+&quot;url&quot;: &quot;<data:blog.homepageUrl.canonical.jsonEscaped/>&quot;, &quot;potentialAction&quot;: 
+  {
+  &quot;@type&quot;: &quot;SearchAction&quot;, 
+  &quot;target&quot;: &quot;<data:blog.homepageUrl.canonical.jsonEscaped/>search/?q={search_term}&quot;, 
+  &quot;query-input&quot;: &quot;required name=search_term&quot; 
+  }  
+}
+] }
+</script>
+<b:comment>[Meta schema]______________________________________________________________________________________________________</b:comment>
+
+
+<b:comment>[IE]______________________________________________________________________________________________________</b:comment>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'/>
+<!--[if IE]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+<![endif]-->
+<b:comment>[/IE]______________________________________________________________________________________________________</b:comment>
+
+
+<b:comment>[cash]______________________________________________________________________________________________________</b:comment>
+<include expiration='7d' path='*.js'/>
+<include expiration='7d' path='*.css'/>
+<include expiration='30d' path='*.gif'/>
+<include expiration='30d' path='*.jpeg'/>
+<include expiration='30d' path='*.jpg'/>
+<include expiration='30d' path='*.png'/>
+<meta content='43200' http-equiv='expires'/>
+<b:comment>[/cash]______________________________________________________________________________________________________</b:comment>
+
+
+<b:comment>[dns-prefetch]______________________________________________________________________________________________________</b:comment>
+<link expr:href='data:blog.homepageUrl.canonical' rel='dns-prefetch'/>
+<link href='//www.blogger.com' rel='dns-prefetch'/>
+
+<link href='//1.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='//2.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='//3.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='//4.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='//blogger.googleusercontent.com' rel='dns-prefetch'/>
+<link href='//lh1.googleusercontent.com' rel='dns-prefetch'/>
+<link href='//lh2.googleusercontent.com' rel='dns-prefetch'/>
+<link href='//lh3.googleusercontent.com' rel='dns-prefetch'/>
+<link href='//lh4.googleusercontent.com' rel='dns-prefetch'/>
+<link href='//cdn.statically.io' rel='dns-prefetch'/>
+
+<b:if cond='data:blog.analyticsAccountNumber'>
+	<link href='//www.google-analytics.com' rel='dns-prefetch'/>
+</b:if>
+<b:if cond='(data:widgets.Translate any (w =&gt; w.id == &quot;Translate1&quot;))'>
+ <link href='//translate.google.com/' rel='dns-prefetch'/>
+</b:if>
+<b:if cond='(data:widgets.Text any (w =&gt; w.id == &quot;Text1&quot;))'>
+	<link href='//images.dmca.com' rel='dns-prefetch'/>
+</b:if>
+
+<b:if cond='data:view.featuredImage.isYoutube'>
+ <link href='//img.youtube.com' rel='dns-prefetch'/>
+ <link href='//www.youtube-nocookie.com' rel='dns-prefetch'/>
+</b:if>
+
+<b:if cond='data:widgets.Blog.first.allBylineItems.comments'>
+  
+<b:if cond='data:widgets.Blog.first.allBylineItems.icons'><link href='//w.likebtn.com' rel='dns-prefetch'/></b:if>
+<b:if cond='(data:widgets.Blog.first.allBylineItems.comments.label contains &quot;@facebook&quot;)'>
+ <link href='//connect.facebook.net' rel='dns-prefetch'/>
+</b:if>
+<b:if cond='(data:widgets.Blog.first.allBylineItems.comments.label not contains &quot;@&quot;) and (data:widgets.Blog.first.allBylineItems.comments.label not contains &quot;(&quot;) and (data:widgets.Blog.first.allBylineItems.comments.label not contains &quot;)&quot;)'>
+ <link expr:href='&quot;//&quot; + data:widgets.Blog.first.allBylineItems.comments.label + &quot;.disqus.com&quot;' rel='dns-prefetch'/>
+</b:if>
+
+<b:if cond='(data:widgets.Blog.first.allBylineItems.comments.label not contains &quot;@&quot;) and (data:widgets.Blog.first.allBylineItems.comments.label contains &quot;(&quot;) and (data:widgets.Blog.first.allBylineItems.comments.label contains &quot;)&quot;)'>
+</b:if>
+
+</b:if>  
+  
+<b:if cond='(data:widgets any (w =&gt; w.title contains &quot;Adsense&quot;))'>
+<link href='//adservice.google.ca' rel='dns-prefetch'/>
+<link href='//adservice.google.com' rel='dns-prefetch'/>
+<link href='//googleads.g.doubleclick.net' rel='dns-prefetch'/>
+<link href='//pagead2.googlesyndication.com' rel='dns-prefetch'/>
+</b:if>
+
+<b:comment>
+<link href='//fonts.googleapis.com' rel='dns-prefetch preconnect'/>
+<link href='//fonts.gstatic.com' rel='dns-prefetch preconnect'/>
+</b:comment>
+<b:comment>[/dns-prefetch]______________________________________________________________________________________________________</b:comment>
+
+
+<b:comment>_____________________________________________________________________________________________________________________</b:comment>
+
+
+  
+  
+
+  
+</head>
+
+<body>
+<H1>svg icons</H1>
+</body>
+</html>
