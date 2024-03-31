@@ -1,8 +1,6 @@
-/* w3.JS 1.04 April 2019 by dbschools.com */
-"use strict";
-var db = {};
+/* w3.JS 1.04 April 2019 by w3schools.com */
 
-db.getElements = function (id) {
+getElements = function (id) {
   if (typeof id == "object") {
     return [id];
   } else {
@@ -10,9 +8,9 @@ db.getElements = function (id) {
   }
 };
 
-db.filterHTML = function(id, sel, filter) {
+filterHTML = function(id, sel, filter) {
   var a, b, c, i, ii, iii, hit;
-  a = db.getElements(id);
+  a = getElements(id);
   for (i = 0; i < a.length; i++) {
     b = a[i].querySelectorAll(sel);
     for (ii = 0; ii < b.length; ii++) {
@@ -35,9 +33,9 @@ db.filterHTML = function(id, sel, filter) {
   }
 };
 
-db.sortHTML = function(id, sel, sortvalue) {
+sortHTML = function(id, sel, sortvalue) {
   var a, b, i, ii, y, bytt, v1, v2, cc, j;
-  a = db.getElements(id);
+  a = getElements(id);
   for (i = 0; i < a.length; i++) {
     for (j = 0; j < 2; j++) {
       cc = 0;
@@ -72,20 +70,20 @@ db.sortHTML = function(id, sel, sortvalue) {
   }
 };
 
-db.includeHTML = function(cb) {
+includeHTML = function(cb) {
   var z, i, elmnt, file, xhttp;
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
-    file = elmnt.getAttribute("db-include-html");
+    file = elmnt.getAttribute("include-html");
     if (file) {
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          elmnt.removeAttribute("db-include-html");
-          db.includeHTML(cb);
+          elmnt.removeAttribute("include-html");
+          includeHTML(cb);
         }
       }      
       xhttp.open("GET", file, true);
@@ -96,31 +94,31 @@ db.includeHTML = function(cb) {
   if (cb) cb();
 };
 
-db.getHttpData = function (file, func) {
-  db.http(file, function () {
+getHttpData = function (file, func) {
+  http(file, function () {
     if (this.readyState == 4 && this.status == 200) {
       func(this.responseText);
     }
   });
 };
 
-db.getHttpObject = function (file, func) {
-  db.http(file, function () {
+getHttpObject = function (file, func) {
+  http(file, function () {
     if (this.readyState == 4 && this.status == 200) {
       func(JSON.parse(this.responseText));
     }
   });
 };
 
-db.displayHttp = function (id, file) {
-  db.http(file, function () {
+displayHttp = function (id, file) {
+  http(file, function () {
     if (this.readyState == 4 && this.status == 200) {
-      db.displayObject(id, JSON.parse(this.responseText));
+      displayObject(id, JSON.parse(this.responseText));
     }
   });
 };
 
-db.http = function (target, readyfunc, xml, method) {
+http = function (target, readyfunc, xml, method) {
   var httpObj;
   if (!method) {method = "GET"; }
   if (window.XMLHttpRequest) {
@@ -135,7 +133,7 @@ db.http = function (target, readyfunc, xml, method) {
   }
 };
 
-db.getElementsByAttribute = function (x, att) {
+getElementsByAttribute = function (x, att) {
   var arr = [], arrCount = -1, i, l, y = x.getElementsByTagName("*"), z = att.toUpperCase();
   l = y.length;
   for (i = -1; i < l; i += 1) {
@@ -145,51 +143,51 @@ db.getElementsByAttribute = function (x, att) {
   return arr;
 };  
 
-db.dataObject = {},
-db.displayObject = function (id, data) {
+dataObject = {},
+displayObject = function (id, data) {
   var htmlObj, htmlTemplate, html, arr = [], a, l, rowClone, x, j, i, ii, cc, repeat, repeatObj, repeatX = "";
   htmlObj = document.getElementById(id);
   htmlTemplate = init_template(id, htmlObj);
   html = htmlTemplate.cloneNode(true);
-  arr = db.getElementsByAttribute(html, "db-repeat");
+  arr = getElementsByAttribute(html, "repeat");
   l = arr.length;
   for (j = (l - 1); j >= 0; j -= 1) {
-    cc = arr[j].getAttribute("db-repeat").split(" ");
+    cc = arr[j].getAttribute("repeat").split(" ");
     if (cc.length == 1) {
       repeat = cc[0];
     } else {
       repeatX = cc[0];
       repeat = cc[2];
     }
-    arr[j].removeAttribute("db-repeat");
+    arr[j].removeAttribute("repeat");
     repeatObj = data[repeat];
     if (repeatObj && typeof repeatObj == "object" && repeatObj.length != "undefined") {
       i = 0;
       for (x in repeatObj) {
         i += 1;
         rowClone = arr[j];
-        rowClone = db_replace_curly(rowClone, "element", repeatX, repeatObj[x]);
+        rowClone = replace_curly(rowClone, "element", repeatX, repeatObj[x]);
         a = rowClone.attributes;
         for (ii = 0; ii < a.length; ii += 1) {
-          a[ii].value = db_replace_curly(a[ii], "attribute", repeatX, repeatObj[x]).value;
+          a[ii].value = replace_curly(a[ii], "attribute", repeatX, repeatObj[x]).value;
         }
         (i === repeatObj.length) ? arr[j].parentNode.replaceChild(rowClone, arr[j]) : arr[j].parentNode.insertBefore(rowClone, arr[j]);
       }
     } else {
-      console.log("db-repeat must be an array. " + repeat + " is not an array.");
+      console.log("repeat must be an array. " + repeat + " is not an array.");
       continue;
     }
   }
-  html = db_replace_curly(html, "element");
+  html = replace_curly(html, "element");
   htmlObj.parentNode.replaceChild(html, htmlObj);
   function init_template(id, obj) {
     var template;
     template = obj.cloneNode(true);
-    if (db.dataObject.hasOwnProperty(id)) {return db.dataObject[id];}
-    db.dataObject[id] = template;
+    if (dataObject.hasOwnProperty(id)) {return dataObject[id];}
+    dataObject[id] = template;
     return template;
   }
-  function db_replace_curly(elmnt, typ, repeatX, x) {
+  function replace_curly(elmnt, typ, repeatX, x) {
     var value, rowClone, pos1, pos2, originalHTML, lookFor, lookForARR = [], i, cc, r;
     rowClone = elmnt.cloneNode(true);
     pos1 = 0;
@@ -226,14 +224,14 @@ db.displayObject = function (id, data) {
         if (typ == "attribute") {
           rowClone.value = rowClone.value.replace(r, value);
         } else {
-          db_replace_html(rowClone, r, value);
+          replace_html(rowClone, r, value);
         }
       }
       pos1 = pos1 + 1;
     }
     return rowClone;
   }
-  function db_replace_html(a, r, result) {
+  function replace_html(a, r, result) {
     var b, l, i, a, x, j;
     if (a.hasAttributes()) {
       b = a.attributes;
