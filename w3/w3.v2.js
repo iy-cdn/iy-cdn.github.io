@@ -1,76 +1,63 @@
-/* s.JS 1.04 April 2019 by sschools.com */
-"use strict";
-var s = {};
-s.hide = function (sel) {
-  s.hideElements(s.getElements(sel));
-};
+/* W3.JS 1.04 April 2019 by w3schools.com */
 
-s.hideElements = function (elements) {
+hide = function (sel) {
+  hideElements(getElements(sel));
+};
+hideElements = function (elements) {
   var i, l = elements.length;
   for (i = 0; i < l; i++) {
-    s.hideElement(elements[i]);
+    hideElement(elements[i]);
   }
 };
-
-s.hideElement = function (element) {
-  s.styleElement(element, "display", "none");
+hideElement = function (element) {
+  styleElement(element, "display", "none");
 };
-
-s.show = function (sel, a) {
-  var elements = s.getElements(sel);
-  if (a) {s.hideElements(elements);}
-  s.showElements(elements);
+show = function (sel, a) {
+  var elements = getElements(sel);
+  if (a) {hideElements(elements);}
+  showElements(elements);
 };
-
-s.showElements = function (elements) {
+showElements = function (elements) {
   var i, l = elements.length;
   for (i = 0; i < l; i++) {
-    s.showElement(elements[i]);
+    showElement(elements[i]);
   }
 };
-
-s.showElement = function (element) {
-  s.styleElement(element, "display", "block");
+showElement = function (element) {
+  styleElement(element, "display", "block");
 };
-
-s.addStyle = function (sel, prop, val) {
-  s.styleElements(s.getElements(sel), prop, val);
+addStyle = function (sel, prop, val) {
+  styleElements(getElements(sel), prop, val);
 };
-
-s.styleElements = function (elements, prop, val) {
+styleElements = function (elements, prop, val) {
   var i, l = elements.length;
   for (i = 0; i < l; i++) {    
-    s.styleElement(elements[i], prop, val);
+    styleElement(elements[i], prop, val);
   }
 };
-
-s.styleElement = function (element, prop, val) {
+styleElement = function (element, prop, val) {
   element.style.setProperty(prop, val);
 };
-
-s.toggleShow = function (sel) {
-  var i, x = s.getElements(sel), l = x.length;
+toggleShow = function (sel) {
+  var i, x = getElements(sel), l = x.length;
   for (i = 0; i < l; i++) {    
     if (x[i].style.display == "none") {
-      s.styleElement(x[i], "display", "block");
+      styleElement(x[i], "display", "block");
     } else {
-      s.styleElement(x[i], "display", "none");
+      styleElement(x[i], "display", "none");
     }
   }
 };
-
-s.addClass = function (sel, name) {
-  s.addClassElements(s.getElements(sel), name);
+addClass = function (sel, name) {
+  addClassElements(getElements(sel), name);
 };
-
-s.addClassElements = function (elements, name) {
+addClassElements = function (elements, name) {
   var i, l = elements.length;
   for (i = 0; i < l; i++) {
-    s.addClassElement(elements[i], name);
+    addClassElement(elements[i], name);
   }
 };
-
-s.addClassElement = function (element, name) {
+addClassElement = function (element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -78,19 +65,16 @@ s.addClassElement = function (element, name) {
     if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
   }
 };
-
-s.removeClass = function (sel, name) {
-  s.removeClassElements(s.getElements(sel), name);
+removeClass = function (sel, name) {
+  removeClassElements(getElements(sel), name);
 };
-
-s.removeClassElements = function (elements, name) {
+removeClassElements = function (elements, name) {
   var i, l = elements.length, arr1, arr2, j;
   for (i = 0; i < l; i++) {
-    s.removeClassElement(elements[i], name);
+    removeClassElement(elements[i], name);
   }
 };
-
-s.removeClassElement = function (element, name) {
+removeClassElement = function (element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -101,19 +85,16 @@ s.removeClassElement = function (element, name) {
   }
   element.className = arr1.join(" ");
 };
-
-s.toggleClass = function (sel, c1, c2) {
-  s.toggleClassElements(s.getElements(sel), c1, c2);
+toggleClass = function (sel, c1, c2) {
+  toggleClassElements(getElements(sel), c1, c2);
 };
-
-s.toggleClassElements = function (elements, c1, c2) {
+toggleClassElements = function (elements, c1, c2) {
   var i, l = elements.length;
   for (i = 0; i < l; i++) {    
-    s.toggleClassElement(elements[i], c1, c2);
+    toggleClassElement(elements[i], c1, c2);
   }
 };
-
-s.toggleClassElement = function (element, c1, c2) {
+toggleClassElement = function (element, c1, c2) {
   var t1, t2, t1Arr, t2Arr, j, arr, allPresent;
   t1 = (c1 || "");
   t2 = (c2 || "");
@@ -126,9 +107,9 @@ s.toggleClassElement = function (element, c1, c2) {
       if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
     }
     if (allPresent) {
-      s.removeClassElement(element, t1);
+      removeClassElement(element, t1);
     } else {
-      s.addClassElement(element, t1);
+      addClassElement(element, t1);
     }
   } else {
     allPresent = true;
@@ -136,26 +117,24 @@ s.toggleClassElement = function (element, c1, c2) {
       if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
     }
     if (allPresent) {
-      s.removeClassElement(element, t1);
-      s.addClassElement(element, t2);          
+      removeClassElement(element, t1);
+      addClassElement(element, t2);          
     } else {
-      s.removeClassElement(element, t2);        
-      s.addClassElement(element, t1);
+      removeClassElement(element, t2);        
+      addClassElement(element, t1);
     }
   }
 };
-
-s.getElements = function (id) {
+getElements = function (id) {
   if (typeof id == "object") {
     return [id];
   } else {
     return document.querySelectorAll(id);
   }
 };
-
-s.filterHTML = function(id, sel, filter) {
+filterHTML = function(id, sel, filter) {
   var a, b, c, i, ii, iii, hit;
-  a = s.getElements(id);
+  a = getElements(id);
   for (i = 0; i < a.length; i++) {
     b = a[i].querySelectorAll(sel);
     for (ii = 0; ii < b.length; ii++) {
@@ -177,10 +156,9 @@ s.filterHTML = function(id, sel, filter) {
     }
   }
 };
-
-s.sortHTML = function(id, sel, sortvalue) {
+sortHTML = function(id, sel, sortvalue) {
   var a, b, i, ii, y, bytt, v1, v2, cc, j;
-  a = s.getElements(id);
+  a = getElements(id);
   for (i = 0; i < a.length; i++) {
     for (j = 0; j < 2; j++) {
       cc = 0;
@@ -214,9 +192,8 @@ s.sortHTML = function(id, sel, sortvalue) {
     }
   }
 };
-
-s.slideshow = function (sel, ms, func) {
-  var i, ss, x = s.getElements(sel), l = x.length;
+slideshow = function (sel, ms, func) {
+  var i, ss, x = getElements(sel), l = x.length;
   ss = {};
   ss.current = 1;
   ss.x = x;
@@ -245,27 +222,26 @@ s.slideshow = function (sel, ms, func) {
     ss.start();
   };
   ss.display = function (n) {
-    s.styleElements(ss.x, "display", "none");
-    s.styleElement(ss.x[n - 1], "display", "block");
+    styleElements(ss.x, "display", "none");
+    styleElement(ss.x[n - 1], "display", "block");
   }
   ss.start();
   return ss;
 };
-
-s.includeHTML = function(cb) {
+includeHTML = function(cb) {
   var z, i, elmnt, file, xhttp;
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
-    file = elmnt.getAttribute("s-include-html");
+    file = elmnt.getAttribute("include-html");
     if (file) {
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          elmnt.removeAttribute("s-include-html");
-          s.includeHTML(cb);
+          elmnt.removeAttribute("include-html");
+          includeHTML(cb);
         }
       }      
       xhttp.open("GET", file, true);
@@ -275,32 +251,28 @@ s.includeHTML = function(cb) {
   }
   if (cb) cb();
 };
-
-s.getHttpData = function (file, func) {
-  s.http(file, function () {
+getHttpData = function (file, func) {
+  http(file, function () {
     if (this.readyState == 4 && this.status == 200) {
       func(this.responseText);
     }
   });
 };
-
-s.getHttpObject = function (file, func) {
-  s.http(file, function () {
+getHttpObject = function (file, func) {
+  http(file, function () {
     if (this.readyState == 4 && this.status == 200) {
       func(JSON.parse(this.responseText));
     }
   });
 };
-
-s.displayHttp = function (id, file) {
-  s.http(file, function () {
+displayHttp = function (id, file) {
+  http(file, function () {
     if (this.readyState == 4 && this.status == 200) {
-      s.displayObject(id, JSON.parse(this.responseText));
+      displayObject(id, JSON.parse(this.responseText));
     }
   });
 };
-
-s.http = function (target, readyfunc, xml, method) {
+http = function (target, readyfunc, xml, method) {
   var httpObj;
   if (!method) {method = "GET"; }
   if (window.XMLHttpRequest) {
@@ -314,8 +286,7 @@ s.http = function (target, readyfunc, xml, method) {
     httpObj.send(xml);
   }
 };
-
-s.getElementsByAttribute = function (x, att) {
+getElementsByAttribute = function (x, att) {
   var arr = [], arrCount = -1, i, l, y = x.getElementsByTagName("*"), z = att.toUpperCase();
   l = y.length;
   for (i = -1; i < l; i += 1) {
@@ -323,56 +294,52 @@ s.getElementsByAttribute = function (x, att) {
     if (y[i].getAttribute(z) !== null) {arrCount += 1; arr[arrCount] = y[i];}
   }
   return arr;
-};
-
-
-
-
-s.dataObject = {},
-s.displayObject = function (id, data) {
+};  
+dataObject = {},
+displayObject = function (id, data) {
   var htmlObj, htmlTemplate, html, arr = [], a, l, rowClone, x, j, i, ii, cc, repeat, repeatObj, repeatX = "";
   htmlObj = document.getElementById(id);
   htmlTemplate = init_template(id, htmlObj);
   html = htmlTemplate.cloneNode(true);
-  arr = s.getElementsByAttribute(html, "s-repeat");
+  arr = getElementsByAttribute(html, "repeat");
   l = arr.length;
   for (j = (l - 1); j >= 0; j -= 1) {
-    cc = arr[j].getAttribute("s-repeat").split(" ");
+    cc = arr[j].getAttribute("repeat").split(" ");
     if (cc.length == 1) {
       repeat = cc[0];
     } else {
       repeatX = cc[0];
       repeat = cc[2];
     }
-    arr[j].removeAttribute("s-repeat");
+    arr[j].removeAttribute("repeat");
     repeatObj = data[repeat];
     if (repeatObj && typeof repeatObj == "object" && repeatObj.length != "undefined") {
       i = 0;
       for (x in repeatObj) {
         i += 1;
         rowClone = arr[j];
-        rowClone = s_replace_curly(rowClone, "element", repeatX, repeatObj[x]);
+        rowClone = replace_curly(rowClone, "element", repeatX, repeatObj[x]);
         a = rowClone.attributes;
         for (ii = 0; ii < a.length; ii += 1) {
-          a[ii].value = s_replace_curly(a[ii], "attribute", repeatX, repeatObj[x]).value;
+          a[ii].value = replace_curly(a[ii], "attribute", repeatX, repeatObj[x]).value;
         }
         (i === repeatObj.length) ? arr[j].parentNode.replaceChild(rowClone, arr[j]) : arr[j].parentNode.insertBefore(rowClone, arr[j]);
       }
     } else {
-      console.log("s-repeat must be an array. " + repeat + " is not an array.");
+      console.log("repeat must be an array. " + repeat + " is not an array.");
       continue;
     }
   }
-  html = s_replace_curly(html, "element");
+  html = replace_curly(html, "element");
   htmlObj.parentNode.replaceChild(html, htmlObj);
   function init_template(id, obj) {
     var template;
     template = obj.cloneNode(true);
-    if (s.dataObject.hasOwnProperty(id)) {return s.dataObject[id];}
-    s.dataObject[id] = template;
+    if (dataObject.hasOwnProperty(id)) {return dataObject[id];}
+    dataObject[id] = template;
     return template;
   }
-  function s_replace_curly(elmnt, typ, repeatX, x) {
+  function replace_curly(elmnt, typ, repeatX, x) {
     var value, rowClone, pos1, pos2, originalHTML, lookFor, lookForARR = [], i, cc, r;
     rowClone = elmnt.cloneNode(true);
     pos1 = 0;
@@ -409,14 +376,14 @@ s.displayObject = function (id, data) {
         if (typ == "attribute") {
           rowClone.value = rowClone.value.replace(r, value);
         } else {
-          s_replace_html(rowClone, r, value);
+          replace_html(rowClone, r, value);
         }
       }
       pos1 = pos1 + 1;
     }
     return rowClone;
   }
-  function s_replace_html(a, r, result) {
+  function replace_html(a, r, result) {
     var b, l, i, a, x, j;
     if (a.hasAttributes()) {
       b = a.attributes;
