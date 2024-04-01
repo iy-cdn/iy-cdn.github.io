@@ -7,45 +7,63 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>HTML</title>
 
- <link rel="stylesheet" href="/beercss/beer.css">
- <script type="module" src="/beercss/beer.js"></script>
- <script src="/w3/w3.min.js"></script>
+ <link rel="stylesheet" href="/res/beer/beer.css">
+ <script type="module" src="/res/beer/beer.js"></script>
+ <script src="/res/w3/w3.min.js"></script>
  <!-- Custom -->
- <link rel="stylesheet" href="/i/res/style.css">
+ <link rel="stylesheet" href="/res/style.css">
 </head>
 
 
 
-<body id="app">
+<body class="Hide" id="app">
 
-<header class="fixed primary" include-html="/i/content/header.htm"><progress class="circle large"></progress></header>
+
+<nav class="top-round bottom s m l">
+  <a id="nL1" class="nL active" data-ui="#page1" onclick="$.removeClass('.nL','active'); $.addClass('#nL1','active')">
+   <i>home</i>Home</a>
+  
+  <a id="nL2" class="nL" data-ui="#drawer" onclick="$.removeClass('.nL','active'); $.addClass('#nL2','active')">
+   <i>widgets</i>Menu</a>
+  
+  <a id="nL3" class="nL" data-ui="#notifications_p" onclick="$.removeClass('.nL','active'); $.addClass('#nL3','active')">
+   <i>notifications</i>Notifications</a>
+  
+  <a id="nL4" class="nL" data-ui="#page3" onclick="$.removeClass('.nL','active'); $.addClass('#nL4','active')">
+   <i>phone</i>Contact</a>
+  
+  <a id="nL5" class="nL" data-ui="#page5" onclick="$.removeClass('.nL','active'); $.addClass('#nL5','active')">
+   <i>info</i>Info</a>
+</nav>
+
+
+
+<header class="fixed primary" include-html="/content/header.htm"><progress class="circle large"></progress></header>
+
 
 <main class="responsive">
-<div class="page active left" id="page1" include-html="/i/content/page_1.htm"><progress class="circle large"></progress></div>
+ 
+<div class="page active left" id="page1" include-html="/content/page_1.htm"><progress class="circle large"></progress></div>
 
-<div class="page left" id="page2" include-html="/i/content/page_2.htm"><progress class="circle large"></progress></div>
+<div class="page left" id="page2" include-html="/content/page_2.htm"><progress class="circle large"></progress></div>
 
-<div class="page left" id="page3" include-html="/i/content/page_3.htm"><progress class="circle large"></progress></div>
+<div class="page left" id="page3" include-html="/content/page_3.htm"><progress class="circle large"></progress></div>
 
-<div class="page left" id="page4" include-html="/i/content/page_4.htm"><progress class="circle large"></progress></div>
+<div class="page left" id="page4" include-html="/content/page_4.htm"><progress class="circle large"></progress></div>
 
-<div class="page left" id="page5" include-html="/i/content/page_5.htm"><progress class="circle large"></progress></div>
+<div class="page left" id="page5" include-html="/content/page_5.htm"><progress class="circle large"></progress></div>
 
-<div class="page left" id="notifications_p" include-html="/i/content/notifications.htm"><progress class="circle large"></progress></div>
+<div class="page left" id="notifications_p" include-html="/content/notifications.htm"><progress class="circle large"></progress></div>
 
 </main>
 
 
-
-
-
-
 <!--
-<footer class="dark" include-html="/i/content/footer.htm"><progress class="circle large"></progress></footer>
+<footer class="dark" include-html="/content/footer.htm"><progress class="circle large"></progress></footer>
 -->
 
-<script src="/i/content/data.js"></script>
-<script src="/i/res/main.js"></script>
+<script src="/content/data.js"></script>
+<script src="/res/main.js"></script>
 
 </body>
 
