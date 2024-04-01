@@ -1,0 +1,45 @@
+<div class="fill medium-height middle-align center-align">
+ <div class="center-align">
+  <h5>{{title}}</h5>
+  <p class="no-wrap">all you need : <strong repeat="i in cats" class="slid">{{i}}</strong></p>
+ 
+  <div class="space"></div>
+  <nav class="no-space">
+   <div class="max field border round">
+    <input placeholder="type to search" type="text" oninput="$.filterHTML('#posts', '.item', this.value)"><i>search</i>
+   </div>
+  </nav>
+ </div>
+</div>
+
+
+
+ 
+
+
+
+  <div class="grid" id="posts">
+
+   <div class="s12 m6 l4 item" repeat="posts">
+    <article class="no-padding">
+     <div class="grid no-space">
+      <div class="s6">
+       <img class="responsive" src="{{image}}">
+      </div>
+      
+      <div class="s6">
+       <div class="padding">
+        <h6>{{name}}</h6>
+        <p>{{salary}}</p>
+        <button class="border round">{{age}}</button>
+
+       </div>
+      </div>
+     </div>
+    </article>
+   </div>
+
+  </div>
+
+<div class="large-space"></div>
+<div class="space"></div>

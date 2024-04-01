@@ -1,0 +1,63 @@
+ <nav>
+  <button class="circle transparent m l" data-ui="#drawer">
+   <i>menu</i>
+  </button>
+  
+  <button class="chip circle transparent m l" data-ui="#page1">
+   <i>home</i>
+  </button>
+
+   <h5 data-ui="#page1" class="max">{{title}}</h5>
+
+  <button class="chip circle transparent" onclick="mode()"><i>dark_mode</i></button>
+  
+  
+  <button class="chip circle transparent m l" data-ui="#notifications_d">
+   <i>notifications</i>
+   <div class="badge">new</div>
+  </button>
+  
+  <button class="chip circle transparent">
+   <i>more_vert</i>
+   <menu class="no-wrap left">
+   	<a class="row" data-ui="#page3"><i>phone</i>Contact</a>
+   	<a class="row" data-ui="#page5"><i>info</i>Info</a>
+ </menu>
+  </button>
+ </nav>
+
+
+<dialog id="notifications_d" include-html="/content/notifications.htm"><progress class="circle large"></progress></dialog>
+ 
+
+<dialog id="drawer" class="left no-padding">
+ 
+ <nav class="drawer" data-ui="#drawer">
+  
+  <header>
+ <nav>
+  <img class="circle" src="/favicon.png">
+  <h6 class="max">{{title}}</h6>
+  <button class="transparent circle large">
+   <i>close</i>
+   </button>
+ </nav>
+</header>
+  
+  <a data-ui="#page1"><i>home</i><span>Home</span></a>
+  <a data-ui="#page2"><i>link</i><span>Explore</span></a>
+  <a data-ui="#page3"><i>link</i><span>Top</span></a>
+  <a data-ui="#page4"><i>link</i><span>Bottom</span></a>
+  <a data-ui="#page5"><i>link</i><span>Code</span></a>
+ </nav>
+ 
+</dialog>
+ 
+ 
+ <nav class="top-round bottom s">
+  <a data-ui="#page1"><i>home</i>Home</a>
+  <a data-ui="#drawer"><i>widgets</i>Menu</a>
+  <a data-ui="#notifications_p"><i>notifications</i>Notifications</a>
+  <a data-ui="#page3"><i>phone</i>Contact</a>
+  <a data-ui="#page5"><i>info</i>Info</a>
+ </nav>

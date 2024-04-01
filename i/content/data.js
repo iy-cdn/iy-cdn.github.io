@@ -1,0 +1,185 @@
+var data = { 
+       posts: [
+        {
+          id: "1",
+          name: "Tiger Nixon",
+          salary: "320800",
+          age: "61",
+          image: "//randomuser.me/api/portraits/men/1.jpg",
+        },
+        {
+          id: "2",
+          name: "Garrett Winters",
+          salary: "170750",
+          age: "63",
+          image: "//randomuser.me/api/portraits/men/2.jpg",
+        },
+        {
+          id: "3",
+          name: "Ashton Cox",
+          salary: "86000",
+          age: "66",
+          image: "//randomuser.me/api/portraits/men/3.jpg",
+        },
+        {
+          id: "4",
+          name: "Cedric Kelly",
+          salary: "433060",
+          age: "22",
+          image: "//randomuser.me/api/portraits/men/4.jpg",
+        },
+        {
+          id: "5",
+          name: "Airi Satou",
+          salary: "162700",
+          age: "33",
+          image: "//randomuser.me/api/portraits/women/5.jpg",
+        },
+        {
+          id: "6",
+          name: "Brielle Williamson",
+          salary: "372000",
+          age: "61",
+          image: "//randomuser.me/api/portraits/women/6.jpg",
+        },
+        {
+          id: "7",
+          name: "Herrod Chandler",
+          salary: "137500",
+          age: "59",
+          image: "//randomuser.me/api/portraits/men/7.jpg",
+        },
+        {
+          id: "8",
+          name: "Rhona Davidson",
+          salary: "327900",
+          age: "55",
+          image: "//randomuser.me/api/portraits/women/8.jpg",
+        },
+        {
+          id: "9",
+          name: "Colleen Hurst",
+          salary: "205500",
+          age: "39",
+          image: "//randomuser.me/api/portraits/women/9.jpg",
+        },
+        {
+          id: "10",
+          name: "Sonya Frost",
+          salary: "103600",
+          age: "23",
+          image: "//randomuser.me/api/portraits/women/10.jpg",
+        },
+        {
+          id: "11",
+          name: "Jena Gaines",
+          salary: "90560",
+          age: "30",
+          image: "//randomuser.me/api/portraits/women/11.jpg",
+        },
+        {
+          id: "12",
+          name: "Quinn Flynn",
+          salary: "342000",
+          age: "22",
+          image: "//randomuser.me/api/portraits/men/12.jpg",
+        },
+        {
+          id: "13",
+          name: "Charde Marshall",
+          salary: "470600",
+          age: "36",
+          image: "//randomuser.me/api/portraits/women/12.jpg",
+        },
+        {
+          id: "14",
+          name: "Haley Kennedy",
+          salary: "313500",
+          age: "43",
+          image: "//randomuser.me/api/portraits/women/14.jpg",
+        },
+        {
+          id: "15",
+          name: "Tatyana Fitzpatrick",
+          salary: "385750",
+          age: "19",
+          image: "//randomuser.me/api/portraits/women/15.jpg",
+        },
+        {
+          id: "16",
+          name: "Michael Silva",
+          salary: "198500",
+          age: "66",
+          image: "//randomuser.me/api/portraits/men/16.jpg",
+        },
+        {
+          id: "17",
+          name: "Paul Byrd",
+          salary: "725000",
+          age: "64",
+          image: "//randomuser.me/api/portraits/men/17.jpg",
+        },
+        {
+          id: "18",
+          name: "Gloria Little",
+          salary: "237500",
+          age: "59",
+          image: "//randomuser.me/api/portraits/women/18.jpg",
+        },
+        {
+          id: "19",
+          name: "Bradley Greer",
+          salary: "132000",
+          age: "41",
+          image: "//randomuser.me/api/portraits/men/19.jpg",
+        },
+        {
+          id: "20",
+          name: "Dai Rios",
+          salary: "217500",
+          age: "35",
+          image: "//randomuser.me/api/portraits/men/20.jpg",
+        },
+        {
+          id: "21",
+          name: "Jenette Caldwell",
+          salary: "345000",
+          age: "30",
+          image: "//randomuser.me/api/portraits/women/21.jpg",
+        },
+        {
+          id: "22",
+          name: "Yuri Berry",
+          salary: "675000",
+          age: "40",
+          image: "//randomuser.me/api/portraits/men/22.jpg",
+        },
+        {
+          id: "23",
+          name: "Caesar Vance",
+          salary: "106450",
+          age: "21",
+          image: "//randomuser.me/api/portraits/men/23.jpg",
+        },
+        {
+          id: "24",
+          name: "Doris Wilder",
+          salary: "85600",
+          age: "23",
+          image: "//randomuser.me/api/portraits/women/24.jpg",
+        }
+      ],
+
+
+ "title": "my website", 
+ "desc": "this is a test website",
+ "menu": [
+  { "name": "name1", "url": "#" },
+  { "name": "name2", "url": "#" },
+  { "name": "name3", "url": "#" }
+],
+ "cats": ["food 🍔","cafee ☕️","cars 🚗","trips 🛤️" ]
+
+};
+
+
