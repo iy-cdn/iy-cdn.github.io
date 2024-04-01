@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', updateDarkMode);
 $.includeHTML(myCallback); function myCallback() {
  $.displayObject("app", data);
  $.slideshow(".slid");
+ $.removeClass('body','Hide');
 };
 
 
