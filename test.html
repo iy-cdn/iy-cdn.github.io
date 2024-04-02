@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<title>W3.JS</title>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<body>
+
+<h2>Testing W3.JS in HTML</h2>
+
+<ul id="id01">
+  <li w3-repeat="customers">{{CustomerName}}</li>
+</ul>
+
+<script>
+w3.getHttpObject("https://www.w3schools.com/w3js/customers.js", myFunction);
+
+function myFunction(myObject) {
+  w3.displayObject("id01", myObject);
+}
+</script>
+
+</body>
+</html>
