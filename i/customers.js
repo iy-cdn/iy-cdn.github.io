@@ -1,4 +1,3 @@
-
 {
 "customers":[
 {"CustomerName" : "Alfreds Futterkiste","City" : "Berlin","Country" : "Germany"},
@@ -19,39 +18,3 @@
 {"CustomerName" : "Vaffeljernet","City" : "Århus","Country" : "Denmark"},
 {"CustomerName" : "Wolski Zajazd","City" : "Warszawa","Country" : "Poland"}
 ]}
-
-
-
-
-
-
-
-
-
-
-/*
-
-{ 
- 
-  "item1": [
-  { "id": "d1-1", "name": "Tiger Nixon", "salary": "320800", "age": "61" },
-  { "id": "d1-2", "name": "Garrett Winters", "salary": "170750", "age": "63" },
-  { "id": "d1-3", "name": "Ashton Cox", "salary": "86000", "age": "66" }
-  ],
-  
-  "item2": [
-  { "id": "d2-1", "name": "Tiger Nixon", "salary": "320800", "age": "61" },
-  { "id": "d2-2", "name": "Garrett Winters", "salary": "170750", "age": "63" },
-  { "id": "d2-3", "name": "Ashton Cox", "salary": "86000", "age": "66" }
-  ],
-  
-  "item3": [
-  { "id": "d3-1", "name": "Tiger Nixon", "salary": "320800", "age": "61" },
-  { "id": "d3-2", "name": "Garrett Winters", "salary": "170750", "age": "63" },
-  { "id": "d3-3", "name": "Ashton Cox", "salary": "86000", "age": "66" }
-  ]
-  
- 
-}
-
-*/
