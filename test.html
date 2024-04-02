@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <title>W3.JS</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://www.w3schools.com/lib/w3.js"></script>
-<body>
+<body class="w3-container">
 
-<h2>Testing W3.JS in HTML</h2>
+<h2>Testing W3.JS with CSS</h2>
 
-<ul id="id01">
-  <li w3-repeat="customers">{{CustomerName}}</li>
-</ul>
+<select id="id01" class="w3-xlarge">
+  <option w3-repeat="customers">{{CustomerName}}</option>
+</select>
 
 <script>
-w3.getHttpObject("https://www.w3schools.com/w3js/customers.js", funD);
+w3.getHttpObject("https://iy-cdn.github.io/i/customers.js", myFunction);
 
-function funD(obj) {
-  w3.displayObject("id01", obj);
+function myFunction(myObject) {
+  w3.displayObject("id01", myObject);
 }
 </script>
 
 </body>
-</html>
+</html> 
