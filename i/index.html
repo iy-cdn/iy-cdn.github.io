@@ -2,68 +2,286 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=Edge">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>HTML</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
- <link rel="stylesheet" href="/beercss/beer.css">
- <script type="module" src="/beercss/beer.js"></script>
- <script src="/w3/w3.min.js"></script>
- <!-- Custom -->
- <link rel="stylesheet" href="/i/res/style.css">
+	<title>petite vuejs</title>
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.5.1/dist/cdn/beer.min.css" rel="stylesheet">
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.5.1/dist/cdn/beer.min.js"></script>
+
+<script src="https://unpkg.com/petite-vue"></script>
+
 </head>
 
+<body :class="w.theme">
 
 
-<body class="Hide" id="app">
-
-
-<nav class="top-round bottom s m l">
-  <a id="nL1" class="nL active" data-ui="#page1" onclick="$.removeClass('.nL','active'); $.addClass('#nL1','active')">
-   <i>home</i>Home</a>
-  
-  <a id="nL2" class="nL" data-ui="#drawer" onclick="$.removeClass('.nL','active'); $.addClass('#nL2','active')">
-   <i>widgets</i>Menu</a>
-  
-  <a id="nL3" class="nL" data-ui="#notifications_p" onclick="$.removeClass('.nL','active'); $.addClass('#nL3','active')">
-   <i>notifications</i>Notifications</a>
-  
-  <a id="nL4" class="nL" data-ui="#page3" onclick="$.removeClass('.nL','active'); $.addClass('#nL4','active')">
-   <i>phone</i>Contact</a>
-  
-  <a id="nL5" class="nL" data-ui="#page5" onclick="$.removeClass('.nL','active'); $.addClass('#nL5','active')">
-   <i>info</i>Info</a>
+<nav class="top fixed fill">
+<button class="circle transparent extra" data-ui="#drawer"><i>menu</i></button>
+<div class="max"></div>
+	<!--	<img class="circle" :src="w.logo"> -->
+	<h5 v-text="w.title"></h5>
+<div class="max"></div>
+<button class="chip circle" @click="changeTheme()">
+	<i v-show="w.theme !== 'dark'" class="page top active">light_mode</i>
+	<i v-show="w.theme === 'dark'" class="page top active">dark_mode</i>
+</button>
+<button class="chip circle transparent m l" data-ui="#notif_d">
+	<i>notifications</i>
+	<div class="badge">new</div>
+</button>
+<button class="chip circle transparent m l" data-ui="#menuDrop">
+	<i>more_vert</i>
+	<menu class="no-wrap left" id="menuDrop">
+		<a class="row"><i>phone</i>Contact</a>
+		<a class="row"><i>info</i>Info</a>
+	</menu>
+</button>
 </nav>
 
 
+<nav class="top-round bottom s">
+<a v-for="i in w.nav" @click="url(i.url)" :class="{active: w.url === i.url}">
+	<div v-if="i.tag" class="badge" v-text="i.tag"></div>
+	<i v-text="i.icon"></i><span v-text="i.title"></span>
+</a>
+</nav>
 
-<header class="fixed primary" include-html="/i/content/header.htm"><progress class="circle large"></progress></header>
+
+<div><!-- header -->
+
+<dialog id="drawer" class="left no-padding">
+<nav class="drawer" data-ui="#drawer">
+	<header><nav>
+	<img class="circle" :src="w.logo">
+	<h6 class="max lin" v-text="w.title"></h6>
+	<button class="transparent circle large"><i>close</i></button>
+	</nav></header>
+	
+	<a v-for="i in w.menu" @click="url(i.url)" :class="{active: w.url == i.url}">
+	<i v-text="i.icon"></i> <span :class="{max: i.tag}" v-text="i.title"></span>
+	<b v-if="i.tag" v-text="i.tag"></b>
+	</a>
+</nav>
+</dialog>
+
+<dialog id="notif_d">
+<header>
+<h1>notifications</h1>
+</header>
+
+<div>notifications</div>
+<nav class="right-align no-space">
+<button data-ui="#notif_d" class="transparent link">Close</button>
+</nav>
+</dialog>
+
+</div><!-- / header -->
+
 
 
 <main class="responsive">
- 
-<div class="page active left" id="page1" include-html="/i/content/page_1.htm"><progress class="circle large"></progress></div>
 
-<div class="page left" id="page2" include-html="/i/content/page_2.htm"><progress class="circle large"></progress></div>
 
-<div class="page left" id="page3" include-html="/i/content/page_3.htm"><progress class="circle large"></progress></div>
+<div v-if="w.url === '/'" class="page active left">
 
-<div class="page left" id="page4" include-html="/i/content/page_4.htm"><progress class="circle large"></progress></div>
 
-<div class="page left" id="page5" include-html="/i/content/page_5.htm"><progress class="circle large"></progress></div>
+	  
+<div class="space"></div>
 
-<div class="page left" id="notifications_p" include-html="/i/content/notifications.htm"><progress class="circle large"></progress></div>
+<h2>Available Cars</h2> 
+   
+ <div class="grid" id="car">
+
+ 	<div class="s12 m6 l4" v-for="(i,x) in cars">
+  <article class="no-padding medium-elevate">
+   <div class="grid no-space">
+    <div class="s6">
+     <img class="responsive" :src="i.img">
+     <div class="absolute top left right padding top-shadow white-text">
+      <h5>{{x+1 + '_' + i.model}}</h5>
+      <p>{{i.description}}</p>
+     </div>
+    </div>
+    <div class="s6">
+     <div class="padding">
+      <strong class="large-text right-align top-align">{{i.prices.W}}</strong>
+      <div>
+       <a><i>person</i>
+        <div class="badge border">{{i.size.p}}</div>
+       </a>
+       <a><i>trip</i>
+        <div class="badge border">{{i.size.b}}</div>
+       </a>
+      </div>
+
+      <div class="space"></div>
+
+      <nav>
+       <button class="border round absolute right" :data-ui="'#d' + x">details</button>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </article>
+
+
+<dialog class="modal" :id="'d'+ x">
+
+<header class="fixed">
+<nav class="right-align no-space">
+ <button :data-ui="'#d'+ x" class="border"><i>close</i></button>
+</nav>
+</header>
+
+<div>
+	
+	<div class="tabs">
+     <a :data-ui="'#tA_d'+ x" class="active"><i>add_road</i><span>per way</span></a>
+     <a :data-ui="'#tB_d'+ x"><i>schedule</i><span>per hour</span></a>
+     <a :data-ui="'#tC_d'+ x"><i>sailing</i><span>Tours</span></a>
+  </div>
+
+  <div :id="'tA_d'+ x" class="page padding active top scroll">
+
+<table>
+ <thead>
+  <tr><th>dest</th><th>one Way</th><th>two Ways</th></tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>airport</td><td>{{i.prices.W}}</td> <td>{{i.prices.WW}}</td>
+  </tr>
+  <tr>
+   <td>old market</td><td>{{i.prices.W}}</td><td>{{i.prices.WW}}</td></tr>
+  <tr>
+   <td>hadaba</td> <td>{{i.prices.W}}</td> <td>{{i.prices.WW}}</td>
+  </tr>
+ </tbody>
+</table>
+
+    </div>
+
+  <div :id="'tB_d'+ x" class="page padding top">
+  
+ <table>
+ <thead>
+  <tr><th>one Hour</th><th>two Hour</th></tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>{{i.prices.H}}</td> <td>{{i.prices.HH}}</td>
+  </tr>
+ </tbody>
+</table>
+  
+ </div>
+
+  <div :id="'tC_d'+ x" class="page padding top">
+   <button class="responsive"><i>link</i> available tours</button>
+    </div>
+    
+   </div>
+
+ <footer class="bottom fixed">
+  <nav class="left-align no-space">
+    <a href="https://wa.me/201550579981">
+    <button :data-ui="'#d'+ x" class="border round">
+    <i>phone</i><span>book now</span>
+   </button>
+    </a>
+  </nav>
+ </footer>
+
+</dialog>
+
+</div>
+
+</div> <!-- grid -->
+
+
+<div class="space"></div>
+
+
+</div><!--/page-->
+
+<div v-else-if="w.url === '/page2'" class="page active left">
+	<h1>page 2</h1>
+</div>
+
+<div v-else-if="w.url === '/page3'" class="page active left">
+	<h1>page 3</h1>
+</div><!--/page-->
+
+
+<div v-else-if="w.url === '/page4'" class="page active left">
+	<h1>page 4</h1>
+</div><!--/page-->
+
+
+<div v-else-if="w.url === '/page5'" class="page active left">
+	<h1>page 5</h1>
+</div><!--/page-->
+
+
+<div v-else class="page active left">
+	<h1>404</h1>
+	<p>page not found!</p>
+</div><!--/page-->
+
 
 </main>
 
+<script src="/content/cars.js"></script>
 
-<!--
-<footer class="dark" include-html="/i/content/footer.htm"><progress class="circle large"></progress></footer>
--->
+<script type="module">
+PetiteVue.createApp({
+//
 
-<script src="/i/content/data.js"></script>
-<script src="/i//res/main.js"></script>
+w: {
+	title: "website",
+	url: "/",
+	logo: "/content/logo.jpeg",
+	theme: JSON.parse(localStorage.getItem('theme')) || "light",
+
+	menu: [
+		{ title: "menu 1", url: "/", icon: "link", tag: "25" },
+		{ title: "menu 2", url: "/page2", icon: "link" },
+		{ title: "menu 3", url: "/page3", icon: "link" },
+		{ title: "menu 4", url: "/page4", icon: "link" },
+		{ title: "menu 5", url: "/page5", icon: "link" },
+	],
+
+	nav: [
+		{ title: "Home", url: "/", icon: "home", },
+		{ title: "menu", url: "/page2", icon: "widgets" },
+		{ title: "bell", url: "/page3", icon: "notifications", tag: "new" },
+		{ title: "Share", url: "/page4", icon: "Share" },
+		{ title: "info", url: "/page5", icon: "info" },
+ ],
+
+},
+
+cars,
+
+changeTheme() {
+	if (this.w.theme !== "dark") { this.w.theme = "dark"; }
+	else { this.w.theme = "light"; };
+	localStorage.setItem('theme', JSON.stringify(this.w.theme));
+	},
+
+
+url(url) { this.w.url = url; window.scrollTo(0, 0); },
+
+
+//
+}).mount()
+</script>
 
 </body>
 
