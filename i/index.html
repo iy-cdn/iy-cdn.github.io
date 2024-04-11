@@ -16,9 +16,12 @@
 
 <script src="https://unpkg.com/petite-vue"></script>
 
+<style>
+	[v-cloak] {display: none;}
+</style>
 </head>
 
-<body :class="w.theme">
+<body v-cloak :class="w.theme">
 
 
 <nav class="top fixed fill">
@@ -225,7 +228,7 @@
 
 
 <div v-else-if="w.url === '/page5'" class="page active left">
-	<h1>Ibrahim Younan</h1>
+	<h1>page 5</h1>
 </div><!--/page-->
 
 
